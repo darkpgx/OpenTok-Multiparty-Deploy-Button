@@ -1,7 +1,7 @@
 {
   "name": "OpenTok Multiparty Demo",
     "description": "",
-    "repository": "",
+    "repository": "https://github.com/darkpgx/OpenTok-Multiparty-Deploy-Button",
     "logo": "https://static.opentok.com/img/platform/img-features-multiparty.png",
     "keywords": ["node", "express", "static"]
 }
