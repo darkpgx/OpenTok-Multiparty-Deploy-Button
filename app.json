@@ -1,0 +1,7 @@
+{
+  "name": "OpenTok Multiparty Demo",
+    "description": "",
+    "repository": "",
+    "logo": "https://static.opentok.com/img/platform/img-features-multiparty.png",
+    "keywords": ["node", "express", "static"]
+}
