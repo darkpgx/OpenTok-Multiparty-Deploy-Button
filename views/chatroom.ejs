@@ -15,37 +15,27 @@
 <body>
   <div id = 'myPublisherDiv'></div>
   <div id = 'subscribersDiv'></div>
-  <div>
-    <button id = "home">Home</button>
-    <button id ="videochat">Video Chat</button>
-  </div>
   <script src='//static.opentok.com/webrtc/v2.2/js/opentok.min.js'></script>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script>
     var rmname = "<%= rmname %>";
-
-    $('#home').click( function () {
-      window.location = '/';
-    });
-    $('#videochat').click( function() {
-      $.get("/videochat/" + rmname, function(res) {
-        var api_key = res.api_key;
-        var session_id = res.session_id;
-        var token = res.token;
-        var session = OT.initSession(api_key, session_id);
-        session.on ({
-          streamCreated: function(event) {
-            session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'});
-          }
-        });
-        session.connect(token, function(error) {
-          if (error) {
-            console.log(error.message);
-          }
-          else {
-            session.publish('myPublisherDiv', {width:320, height:240});
-          };
-        });
+    $.get("/videochat/" + rmname, function(res) {
+      var api_key = res.api_key;
+      var session_id = res.session_id;
+      var token = res.token;
+      var session = OT.initSession(api_key, session_id);
+      session.on ({
+        streamCreated: function(event) {
+          session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'});
+        }
+      });
+      session.connect(token, function(error) {
+        if (error) {
+          console.log(error.message);
+        }
+        else {
+          session.publish('myPublisherDiv', {width:320, height:240});
+        };
       });
     });
   </script>
