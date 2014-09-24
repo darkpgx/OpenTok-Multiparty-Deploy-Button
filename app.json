@@ -3,5 +3,13 @@
     "description": "",
     "repository": "https://github.com/darkpgx/OpenTok-Multiparty-Deploy-Button",
     "logo": "https://static.opentok.com/img/platform/img-features-multiparty.png",
-    "keywords": ["node", "express", "static"]
+    "keywords": ["node", "express", "static"],
+    "env": {
+      "opentok_key": {
+        "description": "A secret key provided by opentok"
+      },
+      "opentok_secret": {
+        "description": "obtain by subscribing or trial from opentok"
+      }
+    }
 }
